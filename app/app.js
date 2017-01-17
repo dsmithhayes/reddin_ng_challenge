@@ -9,38 +9,36 @@
         template: '<user-details></user-details>'
       });
     }])
-    .factory('csvFactory', function ($http) {
-      return {
-        parse: function () {
-          var parsed = [];
-          $http.get('data/user-list.csv').then(function (response) {
-            var raw = response.data;
+    .service('csvService', function ($http) {
+      var csv = this;
+      csv.data = [];
 
-            var rows = raw.split('\n');
-            var currentIndex = 0;
+      csv.getData = function () {
+        $http.get('data/user-list.csv').then(function (response) {
+          var raw = response.data;
 
-            // take out the column titles
-            rows.shift();
+          var rows = raw.split('\n');
+          var currentIndex = 0;
 
-            rows.forEach(function (n) {
-              // catch new line at the end of the file
-              if (!n) {
-                return false;
-              }
+          // take out the column titles
+          rows.shift();
 
-              var cols = n.split(',');
+          rows.forEach(function (n) {
+            // catch new line at the end of the file
+            if (!n) {
+              return false;
+            }
 
-              parsed.push({
-                id: currentIndex++,
-                first_name: cols[0],
-                last_name: cols[1],
-                email: cols[2],
-              });
+            var cols = n.split(',');
+
+            csv.data.push({
+              id: currentIndex++,
+              first_name: cols[0],
+              last_name: cols[1],
+              email: cols[2],
             });
           });
-
-          return parsed;
-        }
+        });
       };
     });
 })(window.angular);

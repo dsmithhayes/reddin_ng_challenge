@@ -3,9 +3,14 @@
   angular.module('reddin')
     .component('userList', {
       templateUrl: 'user-list/user-list.html',
-      controller: function UserListController($scope, $element, $attrs, csvFactory) {
+      controller: function UserListController($scope, $element, $attrs, csvService) {
         var ctrl = this;
-        ctrl.users = csvFactory.parse();
+
+        if (csvService.data.length <= 0) {
+          csvService.getData();
+        }
+
+        ctrl.users = csvService.data;
 
         ctrl.sortAlphaAsc = function (users) {
           ctrl.users = users.sort(function (a, b) {
