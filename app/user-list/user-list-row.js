@@ -12,7 +12,7 @@
 
       },
       bindings: {
-        user: '=',
+        user: '<',
         onDelete: '&'
       }
     });

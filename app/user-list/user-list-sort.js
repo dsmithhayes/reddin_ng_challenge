@@ -15,17 +15,17 @@
         };
 
         ctrl.alphaAsc = function () {
-          ctrl.onAlphaAsc({ users: ctrl.users });
+          ctrl.onAsc({ users: ctrl.users });
         };
 
         ctrl.alphaDesc = function () {
-          ctrl.onAlphaDesc({ users: ctrl.users });
+          ctrl.onDesc({ users: ctrl.users });
         };
       },
       bindings: {
-        users: '=',
-        onAlphaAsc: '&',
-        onAlphaDesc: '&'
+        users: '<',
+        onAsc: '&',
+        onDesc: '&'
       }
     });
 

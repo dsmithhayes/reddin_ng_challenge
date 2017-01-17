@@ -7,16 +7,18 @@
         var ctrl = this;
         ctrl.users = GetUserDataCsv.parsed;
 
+
+
         ctrl.sortAlphaAsc = function (users) {
           ctrl.users = users.sort(function (a, b) {
-            return a.localeCompare(b);
+            return a.email.localeCompare(b.email);
           });
         };
 
         ctrl.sortAlphaDesc = function (users) {
           ctrl.users = users.sort(function (a, b) {
-            return a.localeCompare(b).reverse();
-          });
+            return a.email.localeCompare(b.email);
+          }).reverse();
         }
       }
     })
