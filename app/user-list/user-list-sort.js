@@ -14,6 +14,10 @@
           }
         };
 
+        ctrl.updateUser = function (user, prop, value) {
+          user[prop] = value;
+        }
+
         ctrl.alphaAsc = function () {
           ctrl.onAsc({ users: ctrl.users });
         };

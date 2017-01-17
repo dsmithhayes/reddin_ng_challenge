@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom: 1em">
   <div class="col-xs-offset-3 col-xs-4 user-list-column">
-    {{ $ctrl.user.email }}
+    <a href="#/details/{{ $ctrl.user.id }}">{{ $ctrl.user.email }}</a>
   </div>
   <div class="col-xs-2 center user-list-column" style="text-align: right">
     <button class="btn btn-danger" ng-click="$ctrl.delete()">Delete</button>

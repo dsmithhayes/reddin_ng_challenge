@@ -16,8 +16,8 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <user-list></user-list>
+  <div class="container" style="padding: 1em">
+    <ng-view>
   </div>
 
   <script src="bower_components/angular/angular.js"></script>
@@ -28,5 +28,6 @@
   <script src="user-list/user-list.js"></script>
   <script src="user-list/user-list-sort.js"></script>
   <script src="user-list/user-list-row.js"></script>
+  <script src="user-details/user-details.js"></script>
 </body>
 </html>
