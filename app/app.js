@@ -10,8 +10,6 @@
       });
     }])
     .factory('csvFactory', function ($http) {
-      var csv = {};
-
       return {
         parse: function () {
           var parsed = [];
@@ -25,7 +23,6 @@
             rows.shift();
 
             rows.forEach(function (n) {
-
               // catch new line at the end of the file
               if (!n) {
                 return false;
@@ -40,9 +37,9 @@
                 email: cols[2],
               });
             });
-
-            return parsed;
           });
+
+          return parsed;
         }
       };
     });
