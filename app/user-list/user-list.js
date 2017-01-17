@@ -6,8 +6,7 @@
       controller: function UserListController($scope, $element, $attrs, GetUserDataCsv) {
         var ctrl = this;
         ctrl.users = GetUserDataCsv.parsed;
-
-
+        $scope.users = ctrl.users;
 
         ctrl.sortAlphaAsc = function (users) {
           ctrl.users = users.sort(function (a, b) {
