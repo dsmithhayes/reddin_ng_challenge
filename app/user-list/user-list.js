@@ -5,12 +5,7 @@
       templateUrl: 'user-list/user-list.html',
       controller: function UserListController($scope, $element, $attrs, csvFactory) {
         var ctrl = this;
-
-        if (!$scope.users) {
-          ctrl.users = $scope.users = csvFactory.parse();
-        } else {
-          ctrl.users = $scope.users;
-        }
+        ctrl.users = csvFactory.parse();
 
         ctrl.sortAlphaAsc = function (users) {
           ctrl.users = users.sort(function (a, b) {

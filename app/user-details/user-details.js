@@ -5,12 +5,9 @@
       templateUrl: 'user-details/user-details.html',
       controller: function UserDetailsController ($scope, csvFactory) {
         var ctrl = this;
+        var users = csvFactory.parse();
 
-        if (!$scope.users) {
-          ctrl.users = $scope.users = csvFactory.parse();
-        } else {
-          ctrl.user = $scope.users;
-        }
+        
       }
     });
 })(window.angular);
