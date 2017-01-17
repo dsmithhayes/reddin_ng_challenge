@@ -1,6 +1,7 @@
 (function (angular) { 'use strict';
-  angular.module('reddin', [ 'ngRoute' ])
-    .config(['$routeProvider', function ($routeProvider) {
+  angular.module('reddin', [
+    'ngRoute'
+  ]).config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
         template: '<user-list></use-list>'
       });

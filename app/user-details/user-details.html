@@ -1,42 +1,71 @@
 <div class="row">
   <div class="col-xs-offset-3 col-xs-6">
-    <div class="form-group">
-      <label class="sr-only" for="email">Email</label>
-      <input type="text"
-             class="form-control"
-             name="email"
-             ng-model="$ctrl.user.email"
-             placeholder="{{ $ctrl.user.email }}">
+    <div class="row">
+      <div class="col-xs-12">
+        <span ng-click="editable = 'email'" ng-hide="editable == 'email'">
+          {{ $ctrl.user.email }}
+        </span>
+      </div>
+    </div>
+    <div class="row" ng-show="editable == 'email'">
+      <form>
+        <div class="col-xs-8">
+          <input class="form-control" type="text" name="email" ng-model="$ctrl.user.email" />
+        </div>
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary" ng-click="$ctrl.saveEmail($ctrl.user.email); editable = false">Save</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-xs-offset-3 col-xs-6">
-    <div class="form-group">
-      <label class="sr-only" for="first_name">First Name</label>
-      <input type="text"
-             class="form-control"
-             ng-model="$ctrl.user.first_name"
-             placeholder="{{ $ctrl.user.first_name }}">
+    <div class="row">
+      <div class="col-xs-12">
+        <span ng-click="editable = 'first_name'" ng-hide="editable == 'first_name'">
+          {{ $ctrl.user.first_name }}
+        </span>
+      </div>
+    </div>
+    <div class="row" ng-show="editable == 'first_name'">
+      <form>
+        <div class="col-xs-8">
+          <input class="form-control" type="text" name="first_name" ng-model="$ctrl.user.first_name" />
+        </div>
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary" ng-click="$ctrl.saveFirstName($ctrl.user.first_name); editable = false">Save</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-xs-offset-3 col-xs-6">
-    <div class="form-group">
-      <label class="sr-only" for="last_name">Last Name</label>
-      <input type="text"
-             class="form-control"
-             ng-model="$ctrl.user.last_name"
-             placeholder="{{ $ctrl.user.last_name }}">
+    <div class="row">
+      <div class="col-xs-12">
+        <span ng-click="editable = 'last_name'" ng-hide="editable == 'last_name'">
+          {{ $ctrl.user.last_name }}
+        </span>
+      </div>
+    </div>
+    <div class="row" ng-show="editable == 'last_name'">
+      <form>
+        <div class="col-xs-8">
+          <input class="form-control" type="text" name="last_name" ng-model="$ctrl.user.last_name" />
+        </div>
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary" ng-click="$ctrl.saveLastName($ctrl.user.last_name); editable = false">Save</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
 <div class="row">
-  <div class="col-xs-offset-5 col-xs-3" style="text-align: right">
+  <div class="col-xs-offset-6 col-xs-3" style="text-align: right">
     <a class="btn btn-warning" href="#/">Back</a>
-  </div>
-  <div class="col-xs-3">
-    <button class="btn btn-primary">Save</button>
   </div>
 </div>
