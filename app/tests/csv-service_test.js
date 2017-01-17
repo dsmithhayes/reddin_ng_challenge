@@ -9,7 +9,7 @@ describe('csvService', function() {
     inject(function ($httpBackend, csvService) {
       httpBackend = $httpBackend;
       service = csvService;
-    })
+    });
   });
 
   afterEach(function() {

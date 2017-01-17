@@ -3,7 +3,7 @@
   angular.module('reddin')
     .component('userList', {
       templateUrl: 'user-list/user-list.html',
-      controller: function UserListController($scope, $element, $attrs, csvService) {
+      controller: function UserListController($scope, csvService) {
         var ctrl = this;
 
         // Failsafe to assure the CSV data is hydrated into the service.
