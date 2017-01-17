@@ -5,16 +5,19 @@
       templateUrl: 'user-list/user-list.html',
       controller: function UserListController($scope, $element, $attrs, GetUserDataCsv) {
         var ctrl = this;
-
         ctrl.users = GetUserDataCsv.parsed;
 
-        ctrl.deleteUser = function (user) {
-          var index = this.users.indexOf(user);
-
-          if (index >= 0) {   // assert the User exists in the list
-            this.users.splice(index, 1);
-          }
+        ctrl.sortAlphaAsc = function (users) {
+          ctrl.users = users.sort(function (a, b) {
+            return a.localeCompare(b);
+          });
         };
+
+        ctrl.sortAlphaDesc = function (users) {
+          ctrl.users = users.sort(function (a, b) {
+            return a.localeCompare(b).reverse();
+          });
+        }
       }
     })
     .service('GetUserDataCsv', function ($http) {

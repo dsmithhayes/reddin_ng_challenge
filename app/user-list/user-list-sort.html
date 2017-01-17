@@ -1,0 +1,11 @@
+<div class="row" style="padding: 1em">
+  <div class="col-xs-offset-3 col-xs-6" style="text-align: center">
+    <button class="btn btn-primary" ng-click="$ctrl.alphaAsc($ctrl.users)">A-Z</button>
+    <button class="btn btn-primary" ng-click="$ctrl.alphaDesc($ctrl.users)">Z-A</button>
+  </div>
+</div>
+
+<user-list-row ng-repeat="user in $ctrl.users"
+               user="user"
+               on-delete="$ctrl.deleteUser(user)">
+</user-list-row>
